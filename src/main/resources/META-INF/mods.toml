@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All rights reserved"
+
+[[mods]]
+modId="glowray"
+version="0.0.1"
+    # El nombre público que todos verán en el menú de mods
+    displayName="Glowray" 
+    # Tu nombre como autor principal
+    authors="Alejvndro01" 
+    # Una descripción mucho más épica y profesional
+    description='''
+    Glowray sumerge tu mundo de Minecraft en una experiencia mística, 
+    introduciendo criaturas bioluminiscentes únicas y reliquias perdidas. 
+    Explora los ecosistemas acuáticos y descubre los secretos que aguardan 
+    bajo el suave resplandor de la naturaleza.
+    '''
+    # Puedes añadir un link si algún día lo subes a GitHub o CurseForge
+    # displayTestUrl="https://github.com/Alejvndro01/glowray" 
+    # Un mensaje que aparece en la lista de mods
+    credits="Gracias a la comunidad de Glowray por el apoyo en el desarrollo."
+
+[[dependencies.glowray]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47.4.18,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.glowray]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.20.2)"
+    ordering="NONE"
+    side="BOTH"
