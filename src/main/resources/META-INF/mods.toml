@@ -1,10 +1,12 @@
 modLoader="javafml"
 loaderVersion="[47,)"
-license="All rights reserved"
+# CAMBIO: Aquí debe decir MIT para que coincida con tu archivo LICENSE
+license="MIT"
 
 [[mods]]
 modId="glowray"
-version="0.0.1"
+# CAMBIO: En Modrinth y en tu descripción pusiste 1.0.0, aquí debe decir lo mismo
+version="1.0.0"
     # El nombre público que todos verán en el menú de mods
     displayName="Glowray" 
     # Tu nombre como autor principal
@@ -16,8 +18,8 @@ version="0.0.1"
     Explora los ecosistemas acuáticos y descubre los secretos que aguardan 
     bajo el suave resplandor de la naturaleza.
     '''
-    # Puedes añadir un link si algún día lo subes a GitHub o CurseForge
-    # displayTestUrl="https://github.com/Alejvndro01/glowray" 
+    # CAMBIO: Quita el '#' para que el link aparezca en el menú de mods de Minecraft
+    displayTestUrl="https://github.com/Alejvndro01/Glowray" 
     # Un mensaje que aparece en la lista de mods
     credits="Gracias a la comunidad de Glowray por el apoyo en el desarrollo."
 
@@ -27,6 +29,7 @@ version="0.0.1"
     versionRange="[47.4.18,)"
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.glowray]]
     modId="minecraft"
     mandatory=true
