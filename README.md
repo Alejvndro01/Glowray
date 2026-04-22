@@ -16,46 +16,46 @@
 
 ---
 
-## 📜 About Glowray
+## 📜 Sobre Glowray
 
-**Glowray** is a Minecraft mod designed to transform the game's atmosphere by adding bioluminescent creatures and natural fauna. Developed with a **Vanilla+** philosophy, the mod ensures seamless integration into the ecosystem, offering a unique visual experience that shines, especially when using Shaders.
+**Glowray** es un mod diseñado para transformar la atmósfera de Minecraft mediante la inclusión de fauna bioluminiscente. Bajo una filosofía **Vanilla+**, el mod se integra perfectamente en el ecosistema original, ofreciendo una experiencia visual única, especialmente al usar Shaders.
 
-## ✨ Core Features
+## ✨ Características Principales
 
-* **Bioluminescent Fauna**: Introducing unique creatures like the **Stingray**, a glowing ray that illuminates ocean biomes.
-* **Native Animation System**: Fully custom implementation, providing fluid animations **without requiring heavy dependencies** like GeckoLib.
-* **Modular Architecture**: Built with scalability in mind, making it easy to add new species and features.
-* **Vanilla+ Feel**: Designed to feel like a natural expansion of the base game.
+* **Fauna Bioluminiscente**: Incluye criaturas como la **Stingray**, una mantarraya brillante que ilumina los biomas oceánicos.
+* **Sistema de Animación Nativo**: Implementación propia y fluida **sin necesidad de dependencias pesadas** como GeckoLib.
+* **Arquitectura Modular**: Código escalable diseñado para facilitar la creación de nuevas criaturas y funcionalidades.
+* **Estilo Vanilla+**: Diseñado para sentirse como una expansión natural del juego base.
 
-## 🛠️ Requirements & Installation
+## 🛠️ Requisitos e Instalación
 
-* **Minecraft Version**: 1.20.1
-* **Mod Loader**: Forge (Recommended 47.4.18+)
+* **Versión de Minecraft**: 1.20.1
+* **Mod Loader**: Forge (Recomendado 47.4.18+)
 
-1. Download the mod `.jar` file.
-2. Ensure you have **Forge 1.20.1** installed.
-3. Place the file in your `mods` folder and launch the game.
+1. Descarga el archivo `.jar` del mod.
+2. Asegúrate de tener instalado **Forge 1.20.1**.
+3. Coloca el archivo en tu carpeta de `mods` e inicia el juego.
 
-## 🚀 Roadmap
+## 🚀 Roadmap (Planes Futuros)
 
-- [ ] New aquatic, terrestrial, and flying creatures.
-- [ ] Unique bioluminescent drops and crafting materials.
-- [ ] Underwater structures and habitats.
+- [ ] Nuevas criaturas acuáticas, terrestres y voladoras.
+- [ ] Materiales bioluminiscentes para nuevos crafteos.
+- [ ] Estructuras submarinas y hábitats únicos.
 
-## 💬 Community
+## 💬 Comunidad
 
-Join the **Alejvndro Dev** community to:
-- 🧪 Access beta builds and test new creatures.
-- 🐞 Report bugs or request features.
-- 💡 Shape the future of Glowray.
+Únete a la comunidad de **Alejvndro Dev** para:
+- 🧪 Acceder a versiones beta y probar criaturas antes que nadie.
+- 🐞 Reportar errores o sugerir nuevas funciones.
+- 💡 Influir en el desarrollo futuro del mod.
 
-[**Join our Discord Server**](https://discord.gg/k4cbPkFUnc)
+[**Únete a nuestro Servidor de Discord**](https://discord.gg/k4cbPkFUnc)
 
-## ⚖️ License
-This project is licensed under the MIT License. Feel free to explore the code and contribute.
+## ⚖️ Licencia
+Este proyecto está bajo la Licencia MIT. Siéntete libre de explorar el código y contribuir.
 
 ---
 
 <p align="center">
-  <em>"Glowray: Illuminating the forgotten corners of your world."</em>
+  <em>"Glowray: Iluminando los rincones olvidados de tu mundo."</em>
 </p>
