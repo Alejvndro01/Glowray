@@ -2,5 +2,7 @@
   "item.glowray.sting_ray_spawn_egg": "Generador de Mantarraya resplandeciente",
   "item.glowray.glow_rabbit_spawn_egg": "Generador de Conejo resplandeciente",
   "item.glowray.glowray_tab_icon": "Icono de pestaña Glowray",
-  "creativetab.glowray_tab": "Glowray"
+  "creativetab.glowray_tab": "Glowray",
+  "entity.glowray.sting_ray": "Mantarraya resplandeciente",
+  "entity.glowray.glow_rabbit": "Conejo resplandeciente"
 }
