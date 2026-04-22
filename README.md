@@ -1,5 +1,9 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/Alejvndro01/Glowray/refs/heads/main/glowray_tab_logo.png" alt="Glowray Logo" width="600">
+  <br>
+  <a href="https://modrinth.com/mod/glowray" target="_blank">
+    <img src="https://img.shields.io/badge/Descargar-Modrinth-1bd96a?style=for-the-badge&logo=modrinth&logoColor=white" alt="Descargar en Modrinth">
+  </a>
 </p>
 
 <p align="center">
@@ -49,7 +53,7 @@
 - 🐞 Reportar errores o sugerir nuevas funciones.
 - 💡 Influir en el desarrollo futuro del mod.
 
-[**Únete a nuestro Servidor de Discord**](https://discord.gg/k4cbPkFUnc)
+[**Únete a nuestro Servidor de Discord**](https://discord.gg/k4cbPkFUnc){:target="_blank"}
 
 ## ⚖️ Licencia
 Este proyecto está bajo la Licencia MIT. Siéntete libre de explorar el código y contribuir.
