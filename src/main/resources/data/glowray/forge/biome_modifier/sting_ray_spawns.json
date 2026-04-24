@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+  "type": "forge:any",
+  "values": [
+    "#minecraft:is_ocean",
+    "#minecraft:is_deep_ocean",
+    "minecraft:warm_ocean"
+  ]
+},
+  "spawners": {
+    "type": "glowray:sting_ray",
+    "weight": 5,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

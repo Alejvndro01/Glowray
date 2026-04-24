@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any",
+    "values": [
+      "minecraft:swamp",
+      "minecraft:mangrove_swamp"
+    ]
+  },
+  "spawners": {
+    "type": "glowray:snail",
+    "weight": 80,
+    "minCount": 2,
+    "maxCount": 4
+  }
+}
