@@ -1,8 +1,10 @@
 {
   "item.glowray.sting_ray_spawn_egg": "Glow StingRay Spawn Egg",
   "item.glowray.glow_rabbit_spawn_egg": "Glow Rabbit Spawn Egg",
+  "item.glowray.snail_spawn_egg": "Glow Snail Spawn Egg",
   "item.glowray.glowray_tab_icon": "Glowray Tab Icon",
   "creativetab.glowray_tab": "Glowray",
   "entity.glowray.sting_ray": "Glow Stingray",
-  "entity.glowray.glow_rabbit": "Glow Rabbit"
+  "entity.glowray.glow_rabbit": "Glow Rabbit",
+  "entity.glowray.snail": "Snail"
 }

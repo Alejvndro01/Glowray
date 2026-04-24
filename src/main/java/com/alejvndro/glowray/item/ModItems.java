@@ -28,6 +28,13 @@ public class ModItems {
                     0xFFD84A,
                     new Item.Properties()
             ));
+     public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
+        () -> new ForgeSpawnEggItem(
+                ModEntities.SNAIL,
+                0x7A5A3A, // color base
+                0xC2A27A, // manchas
+                new Item.Properties()
+        ));
 
     public static final RegistryObject<Item> GLOWRAY_TAB_ICON = ITEMS.register("glowray_tab_icon",
             () -> new Item(new Item.Properties()));

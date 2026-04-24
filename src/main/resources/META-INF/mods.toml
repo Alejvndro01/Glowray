@@ -19,7 +19,7 @@ version="1.0.0"
     bajo el suave resplandor de la naturaleza.
     '''
     # CAMBIO: Quita el '#' para que el link aparezca en el menú de mods de Minecraft
-    displayTestUrl="https://github.com/Alejvndro01/Glowray" 
+    displayURL="https://github.com/Alejvndro01/Glowray" 
     # Un mensaje que aparece en la lista de mods
     credits="Gracias a la comunidad de Glowray por el apoyo en el desarrollo."
 

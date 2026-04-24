@@ -2,8 +2,10 @@ package com.alejvndro.glowray.client.event;
 
 import com.alejvndro.glowray.Glowray;
 import com.alejvndro.glowray.client.render.entity.model.GlowRabbitModel;
+import com.alejvndro.glowray.client.render.entity.model.SnailModel;
 import com.alejvndro.glowray.client.render.entity.model.StingRayModel;
 import com.alejvndro.glowray.client.render.entity.renderer.GlowRabbitRenderer;
+import com.alejvndro.glowray.client.render.entity.renderer.SnailRenderer;
 import com.alejvndro.glowray.client.render.entity.renderer.StingRayRenderer;
 import com.alejvndro.glowray.common.registry.ModEntities;
 import net.minecraftforge.api.distmarker.Dist;
@@ -18,11 +20,13 @@ public class ClientModEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.STING_RAY.get(), StingRayRenderer::new);
         event.registerEntityRenderer(ModEntities.GLOW_RABBIT.get(), GlowRabbitRenderer::new);
+        event.registerEntityRenderer(ModEntities.SNAIL.get(), SnailRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(StingRayModel.LAYER_LOCATION, StingRayModel::createBodyLayer);
         event.registerLayerDefinition(GlowRabbitModel.LAYER_LOCATION, GlowRabbitModel::createBodyLayer);
+        event.registerLayerDefinition(SnailModel.LAYER_LOCATION, SnailModel::createBodyLayer);
     }
 }

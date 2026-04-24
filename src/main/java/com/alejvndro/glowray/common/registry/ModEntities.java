@@ -2,6 +2,7 @@ package com.alejvndro.glowray.common.registry;
 
 import com.alejvndro.glowray.Glowray;
 import com.alejvndro.glowray.common.entity.animal.glowrabbit.GlowRabbitEntity;
+import com.alejvndro.glowray.common.entity.animal.snail.SnailEntity;
 import com.alejvndro.glowray.common.entity.animal.stingray.StingRayEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -25,6 +26,12 @@ public final class ModEntities {
                     () -> EntityType.Builder.of(GlowRabbitEntity::new, MobCategory.CREATURE)
                             .sized(0.6F, 0.85F)
                             .build("glow_rabbit"));
+
+     public static final RegistryObject<EntityType<SnailEntity>> SNAIL =
+        ENTITIES.register("snail",
+                () -> EntityType.Builder.of(SnailEntity::new, MobCategory.CREATURE)
+                        .sized(0.8F, 0.55F)
+                        .build("snail"));                    
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);

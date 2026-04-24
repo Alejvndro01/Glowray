@@ -21,6 +21,7 @@ public class ModCreativeTabs {
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.STING_RAY_SPAWN_EGG.get());
                         output.accept(ModItems.GLOW_RABBIT_SPAWN_EGG.get());
+                        output.accept(ModItems.SNAIL_SPAWN_EGG.get());
 
                         // opcional: si quieres que el icono también sea item obtenible
                         // output.accept(ModItems.GLOWRAY_TAB_ICON.get());
