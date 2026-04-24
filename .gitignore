@@ -1,9 +1,27 @@
+# Gradle
 .gradle/
-.idea/
 build/
+out/
+
+# Directorios de ejecución de Forge (generados localmente)
 run/
-logs/
-.vscode/
+run-data/
+
+# Salida de Datagen (generado por la tarea :runData)
+src/generated/resources/
+
+# IntelliJ IDEA (toda la carpeta)
+.idea/
 *.iml
 *.ipr
 *.iws
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

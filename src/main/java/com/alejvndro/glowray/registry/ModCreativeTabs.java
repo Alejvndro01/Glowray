@@ -1,7 +1,6 @@
-package com.alejvndro.glowray.creativetab;
+package com.alejvndro.glowray.registry;
 
 import com.alejvndro.glowray.Glowray;
-import com.alejvndro.glowray.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -10,7 +9,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModCreativeTabs {
+public final class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Glowray.MOD_ID);
 
@@ -22,13 +21,12 @@ public class ModCreativeTabs {
                         output.accept(ModItems.STING_RAY_SPAWN_EGG.get());
                         output.accept(ModItems.GLOW_RABBIT_SPAWN_EGG.get());
                         output.accept(ModItems.SNAIL_SPAWN_EGG.get());
-
-                        // opcional: si quieres que el icono también sea item obtenible
-                        // output.accept(ModItems.GLOWRAY_TAB_ICON.get());
                     })
                     .build());
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
+
+    private ModCreativeTabs() {}
 }

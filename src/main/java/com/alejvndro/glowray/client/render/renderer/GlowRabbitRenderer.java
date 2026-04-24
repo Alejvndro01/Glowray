@@ -1,8 +1,8 @@
-package com.alejvndro.glowray.client.render.entity.renderer;
+package com.alejvndro.glowray.client.render.renderer;
 
 import com.alejvndro.glowray.Glowray;
-import com.alejvndro.glowray.client.render.entity.model.GlowRabbitModel;
-import com.alejvndro.glowray.common.entity.animal.glowrabbit.GlowRabbitEntity;
+import com.alejvndro.glowray.client.render.model.GlowRabbitModel;
+import com.alejvndro.glowray.common.entity.GlowRabbitEntity;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -13,13 +13,11 @@ public class GlowRabbitRenderer extends MobRenderer<GlowRabbitEntity, GlowRabbit
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Glowray.MOD_ID, "textures/entity/glow_rabbit.png");
-
     private static final ResourceLocation GLOW_TEXTURE =
             new ResourceLocation(Glowray.MOD_ID, "textures/entity/glow_rabbit_glow.png");
 
     public GlowRabbitRenderer(EntityRendererProvider.Context context) {
         super(context, new GlowRabbitModel<>(context.bakeLayer(GlowRabbitModel.LAYER_LOCATION)), 0.3F);
-
         this.addLayer(new EyesLayer<>(this) {
             @Override
             public RenderType renderType() {

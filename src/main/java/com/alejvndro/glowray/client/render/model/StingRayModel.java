@@ -1,5 +1,6 @@
-package com.alejvndro.glowray.client.render.entity.model;
+package com.alejvndro.glowray.client.render.model;
 
+import com.alejvndro.glowray.Glowray;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HierarchicalModel;
@@ -13,7 +14,9 @@ import net.minecraft.world.entity.Entity;
 
 public class StingRayModel<T extends Entity> extends HierarchicalModel<T> {
 
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("glowray", "sting_ray"), "main");
+    // ✅ CORRECCIÓN: usa Glowray.MOD_ID en lugar de "glowray" hardcodeado
+    public static final ModelLayerLocation LAYER_LOCATION =
+            new ModelLayerLocation(new ResourceLocation(Glowray.MOD_ID, "sting_ray"), "main");
 
     private final ModelPart root;
     private final ModelPart body;
@@ -31,20 +34,15 @@ public class StingRayModel<T extends Entity> extends HierarchicalModel<T> {
 
     public StingRayModel(ModelPart root) {
         this.root = root.getChild("root");
-
         this.body = this.root.getChild("body");
         this.bodyTop = this.body.getChild("body_top");
-
         this.eyeLeft = this.bodyTop.getChild("eye_left");
         this.eyeRight = this.bodyTop.getChild("eye_right");
-
         this.wingLeft = this.body.getChild("wing_left");
         this.wingRight = this.body.getChild("wing_right");
-
         this.bodyBack = this.body.getChild("body_back");
         this.finBackLeft = this.bodyBack.getChild("fin_back_left");
         this.finBackRight = this.bodyBack.getChild("fin_back_right");
-
         this.tailBase = this.body.getChild("tail_base");
         this.tailMid = this.tailBase.getChild("tail_mid");
         this.tailTip = this.tailMid.getChild("tail_tip");
@@ -56,7 +54,7 @@ public class StingRayModel<T extends Entity> extends HierarchicalModel<T> {
 
         PartDefinition root = partdefinition.addOrReplaceChild("root", CubeListBuilder.create(), PartPose.offset(0.0F, 24.0F, 0.0F));
         PartDefinition body = root.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 0).addBox(-5.5F, -3.0F, -8.0F, 11.0F, 3.0F, 15.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
-        
+
         PartDefinition body_top = body.addOrReplaceChild("body_top", CubeListBuilder.create().texOffs(0, 18).addBox(-4.5F, -5.3F, -6.3F, 9.0F, 3.0F, 12.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
         body_top.addOrReplaceChild("eye_left", CubeListBuilder.create().texOffs(42, 28).addBox(3.53F, -3.7F, -4.3F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
         body_top.addOrReplaceChild("eye_right", CubeListBuilder.create().texOffs(48, 28).addBox(-4.53F, -3.7F, -4.3F, 1.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
@@ -78,53 +76,34 @@ public class StingRayModel<T extends Entity> extends HierarchicalModel<T> {
     }
 
     @Override
-    public ModelPart root() {
-        return this.root;
-    }
+    public ModelPart root() { return this.root; }
 
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        // 🔥 RESET (vital para evitar que la rotación se sume infinitamente)
         this.root().getAllParts().forEach(ModelPart::resetPose);
 
-        // 🎯 PITCH DEL CUERPO (Se aplica primero para que afecte todo)
-        // Convierte grados a radianes. Permite que apunte hacia donde nada.
         this.body.xRot = headPitch * ((float)Math.PI / 180F);
 
-        // 🧠 BLENDING: Separamos el movimiento activo del movimiento en reposo
-        
-        // 1. Cálculo de Nado Activo (basado en limbSwing)
         float swimSpeed = 0.6F;
-        float moveWave = Mth.sin(limbSwing * swimSpeed) * limbSwingAmount; 
-        
-        // 2. Cálculo de Idle/Respiración (basado en ageInTicks)
-        // Esto siempre estará activo, dándole vida incluso cuando está quieta.
+        float moveWave = Mth.sin(limbSwing * swimSpeed) * limbSwingAmount;
+
         float idleSpeed = 0.1F;
         float idleWave = Mth.sin(ageInTicks * idleSpeed) * 0.1F;
 
-        // 🪽 ALAS (Movimiento principal)
-        // Sumamos la onda de movimiento activo + la onda de reposo
         this.wingLeft.zRot = (moveWave * 0.8F) + idleWave;
         this.wingRight.zRot = -(moveWave * 0.8F) - idleWave;
 
-        // 🐟 ALETAS TRASERAS (Follow-through de las alas)
         this.finBackLeft.zRot = (moveWave * 0.3F) + (idleWave * 0.5F);
         this.finBackRight.zRot = -(moveWave * 0.3F) - (idleWave * 0.5F);
 
-        // 🐍 COLA (Redujimos la amplitud para evitar que se despiece)
         float tailMoveSpeed = 0.5F;
-        // Cambiamos los multiplicadores de 0.3F, 0.4F, 0.5F a 0.1F, 0.15F y 0.2F
         this.tailBase.xRot = Mth.sin(limbSwing * tailMoveSpeed) * 0.1F * limbSwingAmount;
         this.tailMid.xRot = Mth.sin((limbSwing * tailMoveSpeed) - 1F) * 0.15F * limbSwingAmount;
         this.tailTip.xRot = Mth.sin((limbSwing * tailMoveSpeed) - 2F) * 0.2F * limbSwingAmount;
-
-        // Movimiento de cola en Idle (muy leve)
         this.tailTip.xRot += Mth.sin(ageInTicks * 0.05F) * 0.02F;
 
-        // 🌊 CUERPO (Flotación y oscilación suave)
-        // body.y maneja la altura. Mth.cos() da un rebote suave.
-        this.body.y += Mth.cos(ageInTicks * 0.1F) * 1.5F; 
-        this.body.xRot += moveWave * 0.1F; // Ligero cabeceo al aletear
+        this.body.y += Mth.cos(ageInTicks * 0.1F) * 1.5F;
+        this.body.xRot += moveWave * 0.1F;
     }
 
     @Override

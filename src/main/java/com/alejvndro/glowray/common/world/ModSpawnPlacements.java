@@ -1,8 +1,8 @@
 package com.alejvndro.glowray.common.world;
 
 import com.alejvndro.glowray.Glowray;
-import com.alejvndro.glowray.common.entity.animal.snail.SnailEntity;
-import com.alejvndro.glowray.common.registry.ModEntities;
+import com.alejvndro.glowray.common.entity.SnailEntity;
+import com.alejvndro.glowray.registry.ModEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.EntityType;
@@ -30,7 +30,10 @@ public final class ModSpawnPlacements {
         );
     }
 
-    private static boolean snailSpawnRules(EntityType<SnailEntity> type, LevelAccessor level, MobSpawnType reason, BlockPos pos, RandomSource random) {
-    return true;
-}
+    private static boolean snailSpawnRules(EntityType<SnailEntity> type, LevelAccessor level,
+                                           MobSpawnType reason, BlockPos pos, RandomSource random) {
+        // ✅ MEJORA: condición básica de luz y superficie (antes retornaba true siempre)
+        return level.getRawBrightness(pos, 0) <= 7
+                && level.getBlockState(pos.below()).isSolidRender(level, pos.below());
+    }
 }

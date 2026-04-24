@@ -1,4 +1,4 @@
-package com.alejvndro.glowray.client.render.entity.model;
+package com.alejvndro.glowray.client.render.model;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -14,11 +14,13 @@ import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
+import com.alejvndro.glowray.Glowray;
 
 public class SnailModel<T extends Entity> extends EntityModel<T> {
-    // Se hornea en ClientModEvents.registerLayerDefinitions(...)
+
+    // ✅ CORRECCIÓN: usa Glowray.MOD_ID
     public static final ModelLayerLocation LAYER_LOCATION =
-            new ModelLayerLocation(new ResourceLocation("glowray", "snail"), "main");
+            new ModelLayerLocation(new ResourceLocation(Glowray.MOD_ID, "snail"), "main");
 
     private final ModelPart root;
     private final ModelPart cuerpo;

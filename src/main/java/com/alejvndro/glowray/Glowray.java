@@ -1,12 +1,11 @@
 package com.alejvndro.glowray;
 
-import com.alejvndro.glowray.common.registry.ModEntities;
-import com.alejvndro.glowray.creativetab.ModCreativeTabs;
-import com.alejvndro.glowray.item.ModItems;
+import com.alejvndro.glowray.registry.ModCreativeTabs;
+import com.alejvndro.glowray.registry.ModEntities;
+import com.alejvndro.glowray.registry.ModItems;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import com.alejvndro.glowray.common.world.ModSpawnPlacements;
 
 @Mod(Glowray.MOD_ID)
 public class Glowray {
@@ -15,11 +14,9 @@ public class Glowray {
     public Glowray() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        // Registros (MOD bus)
         ModEntities.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
-
-        // Nota: atributos ahora se registran en ModEntityAttributes (EventBusSubscriber)
+        // Atributos y spawn placements se registran via @EventBusSubscriber
     }
 }

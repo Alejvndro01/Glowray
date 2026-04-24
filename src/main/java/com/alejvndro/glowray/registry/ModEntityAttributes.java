@@ -1,9 +1,9 @@
-package com.alejvndro.glowray.common.registry;
+package com.alejvndro.glowray.registry;
 
 import com.alejvndro.glowray.Glowray;
-import com.alejvndro.glowray.common.entity.animal.glowrabbit.GlowRabbitEntity;
-import com.alejvndro.glowray.common.entity.animal.snail.SnailEntity;
-import com.alejvndro.glowray.common.entity.animal.stingray.StingRayEntity;
+import com.alejvndro.glowray.common.entity.GlowRabbitEntity;
+import com.alejvndro.glowray.common.entity.SnailEntity;
+import com.alejvndro.glowray.common.entity.StingRayEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

@@ -1,5 +1,6 @@
-package com.alejvndro.glowray.common.entity.animal.glowrabbit;
+package com.alejvndro.glowray.common.entity;
 
+import com.alejvndro.glowray.registry.ModEntities;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -54,7 +55,6 @@ public class GlowRabbitEntity extends TamableAnimal {
             return willTame ? InteractionResult.CONSUME : InteractionResult.PASS;
         }
 
-        // Toggle sit si es el dueño
         if (this.isTame() && this.isOwnedBy(player)) {
             if (!this.isFood(stack)) {
                 this.setOrderedToSit(!this.isOrderedToSit());
@@ -64,13 +64,11 @@ public class GlowRabbitEntity extends TamableAnimal {
             }
         }
 
-        // Domesticación
         if (!this.isTame() && isTameItem(stack)) {
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }
-
-            if (this.random.nextInt(3) == 0) { // 1/3
+            if (this.random.nextInt(3) == 0) {
                 this.tame(player);
                 this.setOrderedToSit(true);
                 this.navigation.stop();
@@ -87,9 +85,8 @@ public class GlowRabbitEntity extends TamableAnimal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel level, AgeableMob otherParent) {
-        GlowRabbitEntity baby = com.alejvndro.glowray.common.registry.ModEntities.GLOW_RABBIT.get().create(level);
+        GlowRabbitEntity baby = ModEntities.GLOW_RABBIT.get().create(level);
         if (baby == null) return null;
-
         if (this.isTame() && this.getOwnerUUID() != null) {
             baby.setOwnerUUID(this.getOwnerUUID());
             baby.setTame(true);
@@ -98,17 +95,11 @@ public class GlowRabbitEntity extends TamableAnimal {
     }
 
     @Override
-    protected SoundEvent getAmbientSound() {
-        return SoundEvents.RABBIT_AMBIENT;
-    }
+    protected SoundEvent getAmbientSound() { return SoundEvents.RABBIT_AMBIENT; }
 
     @Override
-    protected SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) {
-        return SoundEvents.RABBIT_HURT;
-    }
+    protected SoundEvent getHurtSound(net.minecraft.world.damagesource.DamageSource source) { return SoundEvents.RABBIT_HURT; }
 
     @Override
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.RABBIT_DEATH;
-    }
+    protected SoundEvent getDeathSound() { return SoundEvents.RABBIT_DEATH; }
 }
