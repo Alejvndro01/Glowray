@@ -53,7 +53,7 @@ Join the **Alejvndro Dev** community to:
 - 🐞 Report bugs or suggest new features.
 - 💡 Influence the future development of the mod.
 
-[**Join our Discord Server**](https://discord.gg/k4cbPkFUnc){:target="_blank"}
+[**Join our Discord Server**](https://discord.gg/k4cbPkFUnc)
 
 ## ⚖️ License
 This project is licensed under the MIT License. Feel free to explore the code and contribute.
