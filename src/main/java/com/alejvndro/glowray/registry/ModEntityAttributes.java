@@ -2,6 +2,7 @@ package com.alejvndro.glowray.registry;
 
 import com.alejvndro.glowray.Glowray;
 import com.alejvndro.glowray.common.entity.GlowRabbitEntity;
+import com.alejvndro.glowray.common.entity.LuciernagaAbisalEntity;
 import com.alejvndro.glowray.common.entity.SnailEntity;
 import com.alejvndro.glowray.common.entity.StingRayEntity;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -16,6 +17,7 @@ public final class ModEntityAttributes {
         event.put(ModEntities.STING_RAY.get(), StingRayEntity.createAttributes().build());
         event.put(ModEntities.GLOW_RABBIT.get(), GlowRabbitEntity.createAttributes().build());
         event.put(ModEntities.SNAIL.get(), SnailEntity.createAttributes().build());
+        event.put(ModEntities.LUCIERNAGA_ABISAL.get(), LuciernagaAbisalEntity.createAttributes().build());
     }
 
     private ModEntityAttributes() {}

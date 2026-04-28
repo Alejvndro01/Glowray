@@ -21,6 +21,9 @@ public final class ModItems {
     public static final RegistryObject<Item> SNAIL_SPAWN_EGG = ITEMS.register("snail_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.SNAIL, 0x7A5A3A, 0xC2A27A, new Item.Properties()));
 
+    public static final RegistryObject<Item> LUCIERNAGA_ABISAL_SPAWN_EGG = ITEMS.register("luciernaga_abisal_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LUCIERNAGA_ABISAL, 0x1A1A2E, 0x00FF88, new Item.Properties()));
+
     public static final RegistryObject<Item> GLOWRAY_TAB_ICON = ITEMS.register("glowray_tab_icon",
             () -> new Item(new Item.Properties()));
 

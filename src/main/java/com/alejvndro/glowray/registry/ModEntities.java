@@ -2,6 +2,7 @@ package com.alejvndro.glowray.registry;
 
 import com.alejvndro.glowray.Glowray;
 import com.alejvndro.glowray.common.entity.GlowRabbitEntity;
+import com.alejvndro.glowray.common.entity.LuciernagaAbisalEntity;
 import com.alejvndro.glowray.common.entity.SnailEntity;
 import com.alejvndro.glowray.common.entity.StingRayEntity;
 import net.minecraft.world.entity.EntityType;
@@ -32,6 +33,12 @@ public final class ModEntities {
                     () -> EntityType.Builder.of(SnailEntity::new, MobCategory.CREATURE)
                             .sized(0.8F, 0.55F)
                             .build("snail"));
+
+    public static final RegistryObject<EntityType<LuciernagaAbisalEntity>> LUCIERNAGA_ABISAL =
+            ENTITIES.register("luciernaga_abisal",
+                    () -> EntityType.Builder.of(LuciernagaAbisalEntity::new, MobCategory.AMBIENT)
+                            .sized(0.4F, 0.3F)
+                            .build("luciernaga_abisal"));
 
     public static void register(IEventBus eventBus) {
         ENTITIES.register(eventBus);
